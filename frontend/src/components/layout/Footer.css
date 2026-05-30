@@ -1,0 +1,50 @@
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* chiếm toàn bộ chiều cao màn hình */
+}
+
+.main-content {
+  flex: 1; /* chiếm khoảng trống, đẩy footer xuống */
+}
+
+.footer {
+  background: #222;
+  color: #ddd;
+  padding: 40px 60px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}

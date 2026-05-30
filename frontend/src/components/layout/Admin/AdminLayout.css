@@ -1,0 +1,20 @@
+.admin-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.main {
+  margin-left: 240px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 240px);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  background: #f3f4f6;
+  padding: 1.5rem;
+}

@@ -1,0 +1,210 @@
+.product-detail-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  gap: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cột ảnh */
+.product-image {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: auto;
+  max-height: 460px;
+  border-radius: 16px;
+}
+
+.product-image img {
+    width: 100%;
+    overflow: hidden;
+    max-height: 500px;
+    object-fit: cover;
+
+}
+
+/* Cột thông tin */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e53935;
+}
+
+.original-price {
+  font-size: 18px;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.discount {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* Button */
+.btn-add-cart {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #1976d2;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-add-cart:hover {
+  background-color: #1565c0;
+}
+
+/* Not found */
+.product-not-found {
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+/* Thông tin bổ sung */
+.product-category,
+.product-sold,
+.product-views,
+.product-stock,
+.product-createdAt {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Selector số lượng */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.quantity-selector button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-selector span {
+  min-width: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Comments Section */
+.comments-section {
+  margin-top: 40px;
+}
+
+.comment-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.comment-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ccc;
+  flex-shrink: 0;
+}
+
+.comment-inputs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment-content {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.btn-submit-comment {
+  align-self: flex-end;
+  padding: 8px 16px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-submit-comment:hover {
+  background-color: #1565c0;
+}
+
+.btn-favorite {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 50%; /* 👈 làm thành tròn */
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex; /* căn giữa icon/emoji */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem; /* cho icon to hơn chút */
+  padding: 0; /* bỏ padding thừa */
+}
+
+.btn-favorite.active {
+  background: #ff4d4f;
+  color: white;
+  border-color: #ff4d4f;
+}
+
+.btn-favorite:hover {
+  background: #ff4d4f15;
+  border-color: #ff4d4f;
+}
+
+.btn-favorite.active:hover {
+  background: #ff7875;
+}

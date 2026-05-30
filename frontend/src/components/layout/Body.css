@@ -1,0 +1,20 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full chiều cao màn hình */
+}
+
+/* Body chiếm toàn bộ không gian còn lại */
+.body-container {
+  flex: 1; /* quan trọng: để chiếm hết phần còn lại */
+  background-color: #fff;
+  display: flex;
+  align-items: center; /* căn giữa dọc (nếu muốn) */
+  justify-content: center; /* căn giữa ngang (nếu muốn) */
+  padding: 20px;
+}
+
+/* Footer luôn nằm dưới */
+footer {
+  margin-top: auto;
+}

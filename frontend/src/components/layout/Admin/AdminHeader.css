@@ -1,0 +1,205 @@
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #1976d2;
+  color: #030303;
+}
+
+.slogan h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.dropdown-menu1 {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  min-width: 150px;
+  z-index: 100;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-item1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.dropdown-item1:hover {
+  background: #f5f5f5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.uts-notification {
+  position: relative;
+}
+
+.uts-notification-dropdown {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 260px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.uts-notification:hover .uts-notification-dropdown {
+  display: block;
+}
+
+.uts-noti-item {
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.uts-noti-item:hover {
+  background: #f8f8f8;
+}
+
+.uts-noti-empty {
+  padding: 15px;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+}
+
+/* Notification dropdown */
+.uts-notification-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 360px;
+  max-height: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.uts-noti-header {
+  padding: 12px 16px;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  background: #f9fafb;
+}
+
+/* List */
+.uts-noti-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 340px;
+}
+
+/* Scrollbar đẹp */
+.uts-noti-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.uts-noti-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.uts-noti-list::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Item */
+.uts-noti-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.uts-noti-item:hover {
+  background: #f3f4f6;
+}
+
+.uts-noti-item.unread {
+  background: #eef6ff;
+  border-left: 4px solid #3b82f6;
+}
+
+.uts-noti-item.read {
+  background: #fff;
+}
+
+.uts-noti-message {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.uts-noti-time {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.uts-noti-empty {
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+}

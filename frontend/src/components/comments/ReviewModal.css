@@ -1,0 +1,223 @@
+.review-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    /* dark navy glass */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Modal container */
+.review-modal {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: scaleUp 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.modal-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #6b7280;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover {
+    color: #ef4444;
+}
+
+/* Product Info */
+.product-info-review {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    gap: 12px;
+}
+
+.product-image-review {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-name-review {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+/* Rating section */
+.rating-section {
+    margin: 15px 0;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 6px;
+    margin: 8px 0;
+}
+
+/* Ngôi sao cơ bản */
+.star {
+    font-size: 1.8rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
+    color: #d1d5db;
+    /* mặc định xám */
+}
+
+/* Ngôi sao đã chọn */
+.star.active {
+    color: #fbbf24;
+    /* vàng */
+    transform: scale(1.2);
+}
+
+/* Ngôi sao nằm bên phải rating (không active) */
+.rating-stars .star:not(.active) {
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+/* Hover tạm thời */
+.star:hover {
+    transform: scale(1.2);
+    opacity: 1;
+    color: #facc15;
+    /* vàng sáng hơn khi hover */
+}
+
+.star.faded {
+    opacity: 0.4;
+    transform: scale(0.85);
+    color: #9ca3af;
+    /* xám nhạt */
+}
+
+.rating-text {
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+/* Comment */
+.comment-section {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-section textarea {
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 0.95rem;
+    resize: none;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comment-section textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.comment-count {
+    font-size: 0.8rem;
+    color: #6b7280;
+    text-align: right;
+    margin-top: 4px;
+}
+
+/* Footer */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-cancel,
+.btn-submit {
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-cancel {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.btn-cancel:hover {
+    background: #e5e7eb;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    box-shadow: 0 6px 14px rgba(99, 102, 241, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
