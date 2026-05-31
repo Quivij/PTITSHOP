@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store.ts";
 import ProductsSection from "../../components/products/ProductsSection.tsx";
+import RecommendationSection from "../../components/products/RecommendationSection.tsx";
 import { Product } from "../../types/Product.ts";
 import "./HomePage.css";
 import { productApi } from "../../api/productApi.ts";
 import { CategoryApi } from "../../api/categoryApi.ts";
 import { Category } from "../../types/Category.ts";
 import SearchBar from "../../components/layout/searchBar.tsx";
+import { recommendationApi } from "../../api/recommendationApi.ts";
 
 
 
@@ -15,6 +19,9 @@ export default function HomePage() {
   const [keyword, setKeyword] = useState("");
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategory] = useState<Category[]>([]);
+  const [recProducts, setRecProducts] = useState<Product[]>([]);
+  const [recLoading, setRecLoading] = useState(true);
+  const { user, token } = useSelector((state: RootState) => state.auth);
 
   const filteredProducts = products.filter(product => {
     const matchesCategory = selectedCategory === "all" || product.category.name === selectedCategory;
@@ -56,6 +63,42 @@ export default function HomePage() {
     };
     fetchCategories();
   }, []);
+
+  // ✅ load recommendations
+  useEffect(() => {
+    const fetchRecommendations = async () => {
+      setRecLoading(true);
+      try {
+        let res;
+        if (token) {
+          // Đảm bảo token đã được ghi vào localStorage trước khi gọi API
+          // (tránh race condition với interceptor của axiosClient)
+          const storedToken = localStorage.getItem("access_token");
+          if (!storedToken) {
+            localStorage.setItem("access_token", token);
+          }
+          res = await recommendationApi.getForYou(8);
+        } else {
+          // Chưa đăng nhập → dùng popular (cold start)
+          res = await recommendationApi.getPopular(8);
+        }
+        setRecProducts(res?.data || []);
+      } catch (err) {
+        console.error("Lỗi tải gợi ý:", err);
+        // Fallback: nếu for-you lỗi, thử popular
+        try {
+          const fallback = await recommendationApi.getPopular(8);
+          setRecProducts(fallback?.data || []);
+        } catch {
+          setRecProducts([]);
+        }
+      } finally {
+        setRecLoading(false);
+      }
+    };
+    fetchRecommendations();
+  }, [token]);
+
 
   const handleSearch = (keyword: string) => {
     setKeyword(keyword);
@@ -183,6 +226,19 @@ export default function HomePage() {
         products={products}
         formatPrice={formatPrice}
       />
+
+      {/* Recommendation Section */}
+      <div style={{ padding: "0 16px" }}>
+        <RecommendationSection
+          title={token ? `Dành Cho ${user?.fullName?.split(" ").pop() || "Bạn"}` : "Có Thể Bạn Thích"}
+          subtitle={token ? "Gợi ý dựa trên lịch sử xem và mua hàng của bạn" : "Sản phẩm phổ biến được nhiều người yêu thích"}
+          badge={token ? "✨ AI Gợi Ý" : "🔥 Phổ Biến"}
+          badgeColor={token ? "#7c3aed" : "#f97316"}
+          products={recProducts}
+          loading={recLoading}
+          formatPrice={formatPrice}
+        />
+      </div>
 
 
       {/* Features Section */}

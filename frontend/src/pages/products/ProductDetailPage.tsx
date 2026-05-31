@@ -6,8 +6,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { cartApi } from "../../api/cartApi.ts";
 import { CategoryApi } from "../../api/categoryApi.ts";
 import { productApi } from "../../api/productApi.ts";
+import { recommendationApi } from "../../api/recommendationApi.ts";
 import CommentsSection from "../../components/comments/CommentsSetion.tsx";
 import ProductsSection from "../../components/products/ProductsSection.tsx";
+import RecommendationSection from "../../components/products/RecommendationSection.tsx";
 import { Product } from "../../types/Product";
 import { formatPrice } from "../../utils/format.ts";
 import "./ProductDetailPage.css";
@@ -15,11 +17,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store.ts";
 import { profileApi } from "../../api/profileApi.ts";
 import { toggleFavoriteProduct } from "../../redux/authSlice.ts";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 export default function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [relatedProduct, setRelatedProduct] = useState<Product[] | null>(null);
+  const [boughtTogether, setBoughtTogether] = useState<Product[]>([]);
+  const [recLoading, setRecLoading] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const { user } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
@@ -80,6 +84,24 @@ export default function ProductDetailPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // Fetch bought-together recommendations
+  useEffect(() => {
+    if (!product?._id) return;
+    const fetchBoughtTogether = async () => {
+      setRecLoading(true);
+      try {
+        const res = await recommendationApi.getBoughtTogether(product._id, 6);
+        setBoughtTogether(res?.data || []);
+      } catch (err) {
+        console.error("Lỗi tải gợi ý:", err);
+        setBoughtTogether([]);
+      } finally {
+        setRecLoading(false);
+      }
+    };
+    fetchBoughtTogether();
+  }, [product?._id]);
 
   if (!product) {
     return <div className="p-4">❌ Không tìm thấy sản phẩm</div>;
@@ -172,6 +194,20 @@ export default function ProductDetailPage() {
       </div>
 
       <CommentsSection productId={product._id} />
+
+      {/* Recommendation: Thường Mua Cùng */}
+      <div style={{ padding: "0 16px" }}>
+        <RecommendationSection
+          title="Thường Mua Cùng Nhau"
+          subtitle="Khách hàng thường mua những sản phẩm này cùng với sản phẩm bạn đang xem"
+          badge="🛒 Hay Mua Kèm"
+          badgeColor="#0ea5e9"
+          products={boughtTogether}
+          loading={recLoading}
+          formatPrice={formatPrice}
+        />
+      </div>
+
       <ProductsSection
         title="Sản phẩm liên quan"
         products={relatedProduct ?? []}

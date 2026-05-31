@@ -189,56 +189,84 @@ const OrdersPage: React.FC = () => {
 
                 <div className="order-items">
                   {(isExpanded ? order.items : order.items.slice(0, 1)).map(
-                    (item, index) => (
-                      <div className="order-item" key={index}>
-                        <img src={item.product.images[0]?.url} alt={item.product.name} />
-                        <div className="item-info">
-                          <p className="name">{item.product.name}</p>
-                          <p className="qty">Số lượng: {item.quantity}</p>
-                          <div className="price">
-                            <span className="current-price">{formatPrice(item.product.price * item.quantity - item.product.price * item.quantity * item.product.discount * 0.01)}</span>
-                            {item.product.discount > 0 && (
-                              <span className="original-price">{formatPrice(item.product.price * item.quantity)}</span>
+                    (item, index) => {
+                      // Guard: bỏ qua item nếu product bị null (đã xóa khỏi DB)
+                      if (!item.product) {
+                        return (
+                          <div className="order-item" key={index}>
+                            <div style={{ width: 80, height: 80, background: '#f0f0f0', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24 }}>🗑️</div>
+                            <div className="item-info">
+                              <p className="name" style={{ color: '#999' }}>Sản phẩm không còn tồn tại</p>
+                              <p className="qty">Số lượng: {item.quantity}</p>
+                            </div>
+                          </div>
+                        );
+                      }
+                      return (
+                        <div className="order-item" key={index}>
+                          <img
+                            src={item.product.images?.[0]?.url || '/placeholder-image.jpg'}
+                            alt={item.product.name}
+                          />
+                          <div className="item-info">
+                            <p className="name">{item.product.name}</p>
+                            <p className="qty">Số lượng: {item.quantity}</p>
+                            <div className="price">
+                              <span className="current-price">
+                                {formatPrice(
+                                  item.product.price * item.quantity -
+                                  item.product.price * item.quantity * (item.product.discount ?? 0) * 0.01
+                                )}
+                              </span>
+                              {(item.product.discount ?? 0) > 0 && (
+                                <span className="original-price">
+                                  {formatPrice(item.product.price * item.quantity)}
+                                </span>
+                              )}
+                            </div>
+                            {order.statusOrder === "delivered" && (
+                              <div className="item-actions">
+                                {!item.isCommented && (
+                                  <button
+                                    className="btn btn-warning btn-sm me-2 bg-opacity-25 hover-bg-opacity-50"
+                                    style={{ backgroundColor: 'rgba(255,193,7,0.25)', borderColor: '#ffc107', color: '#856404' }}
+                                    onClick={() => handleReview(
+                                      order._id,
+                                      item.product._id,
+                                      item.product.name,
+                                      item.product.images?.[0]?.url || ''
+                                    )}
+                                  >
+                                    <i className="bi bi-star me-1"></i>
+                                    Đánh giá
+                                  </button>
+                                )}
+                                <button
+                                  onClick={() => window.location.href = `/products/${item.product.slug || "product"}-${item.product._id}`}
+                                  className="btn btn-success btn-sm bg-opacity-25 hover-bg-opacity-50"
+                                  style={{ backgroundColor: 'rgba(25,135,84,0.25)', borderColor: '#198754', color: '#0f5132' }}
+                                >
+                                  <i className="bi bi-bag-plus me-1"></i>
+                                  Mua lại
+                                </button>
+                              </div>
+                            )}
+                            {order.statusOrder === "cancelled" && (
+                              <div className="item-actions">
+                                <button
+                                  onClick={() => window.location.href = `/products/${item.product.slug || "product"}-${item.product._id}`}
+                                  className="btn btn-secondary btn-sm bg-opacity-25 hover-bg-opacity-50"
+                                  style={{ backgroundColor: 'rgba(108,117,125,0.25)', borderColor: '#6c757d', color: '#41464b' }}
+                                >
+                                  <i className="bi bi-arrow-clockwise me-1"></i>
+                                  Mua lại
+                                </button>
+                              </div>
                             )}
                           </div>
-                          {order.statusOrder === "delivered" && (
-                            <div className="item-actions">
-                              {!item.isCommented && (
-                                <button
-                                  className="btn btn-warning btn-sm me-2 bg-opacity-25 hover-bg-opacity-50"
-                                  style={{ backgroundColor: 'rgba(255,193,7,0.25)', borderColor: '#ffc107', color: '#856404' }}
-                                  onClick={() => handleReview(order._id, item.product._id, item.product.name, item.product.images[0]?.url || '')}
-                                >
-                                  <i className="bi bi-star me-1"></i>
-                                  Đánh giá
-                                </button>
-                              )}
-                              <button
-                                onClick={() => window.location.href = `/products/${item.product.slug || "product"}-${item.product._id}`}
-                                className="btn btn-success btn-sm bg-opacity-25 hover-bg-opacity-50"
-                                style={{ backgroundColor: 'rgba(25,135,84,0.25)', borderColor: '#198754', color: '#0f5132' }}
-                              >
-                                <i className="bi bi-bag-plus me-1"></i>
-                                Mua lại
-                              </button>
-                            </div>
-                          )}
-
-                          {order.statusOrder === "cancelled" && (
-                            <div className="item-actions">
-                              <button
-                                onClick={() => window.location.href = `/products/${item.product.slug || "product"}-${item.product._id}`}
-                                className="btn btn-secondary btn-sm bg-opacity-25 hover-bg-opacity-50"
-                                style={{ backgroundColor: 'rgba(108,117,125,0.25)', borderColor: '#6c757d', color: '#41464b' }}
-                              >
-                                <i className="bi bi-arrow-clockwise me-1"></i>
-                                Mua lại
-                              </button>
-                            </div>
-                          )}
                         </div>
-                      </div>
-                    )
+                      );
+                    }
                   )}
                   {showSeeMore && (
                     <button

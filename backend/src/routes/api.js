@@ -73,6 +73,7 @@ import { checkPayment, createQr } from "../controllers/paymentController.js";
 import { getVouchersByUser } from "../controllers/voucherController.js";
 import { createNotification, getNotificationsByUser, markNotificationAsRead } from "../controllers/notificationController.js";
 import { adminUpdateUser, getNewUsers, getRevenueStats, toggleUserActive } from "../controllers/adminController.js";
+import { getForYou, getBoughtTogether, getPopular } from "../controllers/recommendationController.js";
 import {
   getDeliveryAddresses,
   createDeliveryAddress,
@@ -126,6 +127,10 @@ const initApiRoutes = (app) => {
   router.get("/products", getProductsPerPage);
   router.get("/payment/vnpay_return", checkPayment)
 
+  // Recommendation routes (public)
+  router.get("/recommendations/popular", getPopular);
+  router.get("/recommendations/bought-together/:productId", getBoughtTogether);
+
 
   // Protected routes (authentication required)
   router.use(auth); // Apply auth middleware to all routes below
@@ -165,6 +170,9 @@ const initApiRoutes = (app) => {
   router.put("/orders/:orderId/status", updateOrderStatus);
   router.get("/orders/user/:userId", getOrdersByUserId);
 
+
+  // Recommendation routes (protected — personalized)
+  router.get("/recommendations/for-you", getForYou);
 
   // review
   router.get("/reviews", getReviewsByUser);
