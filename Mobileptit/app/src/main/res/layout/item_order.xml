@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header: Order ID & Status Badge -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvOrderId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mã đơn: #12345"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="@color/colorTextSecondary" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_category_pill"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="Đang xử lý"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EAECEF"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Product Preview Row -->
+        <LinearLayout
+            android:id="@+id/llProductPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/imgProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_cart" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tên sản phẩm"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTextPrimary"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/tvQuantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Số lượng: 1"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorTextSecondary"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- More Items Text -->
+        <TextView
+            android:id="@+id/tvMoreItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+ 2 sản phẩm khác"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="12sp"
+            android:layout_marginStart="62dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EAECEF"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Total Price -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng số tiền:"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="100.000 đ"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+        <!-- Action Buttons Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/btnDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="Chi tiết"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:paddingHorizontal="12dp" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:text="Hủy đơn"
+                android:textColor="@color/colorError"
+                app:strokeColor="@color/colorError"
+                android:textSize="12sp"
+                android:paddingHorizontal="12dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnReceived"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_hero_gradient"
+                android:text="Đã nhận"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:paddingHorizontal="12dp"
+                app:backgroundTint="@null"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnReview"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_btn_gold_gradient"
+                android:text="Đánh giá"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:paddingHorizontal="12dp"
+                app:backgroundTint="@null"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

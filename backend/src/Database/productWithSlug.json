@@ -3,7 +3,7 @@
     "_id": {
       "$oid": "66af270df88554d0fd490301"
     },
-    "name": "Balo laptop UTE",
+    "name": "Balo laptop",
     "quantity": 20,
     "sold": 5,
     "description": "Balo laptop chống sốc",
@@ -28,13 +28,13 @@
     "updatedAt": {
       "$date": "2025-01-01T00:00:00Z"
     },
-    "slug": "balo-laptop-ute"
+    "slug": "balo-laptop"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490302"
     },
-    "name": "Balo du lịch UTE",
+    "name": "Balo du lịch",
     "quantity": 10,
     "sold": 3,
     "description": "Balo du lịch chống nước",
@@ -59,13 +59,13 @@
     "updatedAt": {
       "$date": "2025-01-02T00:00:00Z"
     },
-    "slug": "balo-du-lich-ute"
+    "slug": "balo-du-lich"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490303"
     },
-    "name": "Balo học sinh UTE",
+    "name": "Balo học sinh",
     "quantity": 15,
     "sold": 7,
     "description": "Balo học sinh thời trang",
@@ -90,13 +90,13 @@
     "updatedAt": {
       "$date": "2025-01-03T00:00:00Z"
     },
-    "slug": "balo-hoc-sinh-ute"
+    "slug": "balo-hoc-sinh"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490304"
     },
-    "name": "Áo thể chất UTE",
+    "name": "Áo thể chất",
     "quantity": 100,
     "sold": 20,
     "description": "Áo thể chất, mặc siêu đẹp, thoáng khí, phù hợp với mọi đối tượng",
@@ -121,13 +121,13 @@
     "updatedAt": {
       "$date": "2025-01-01T00:00:00Z"
     },
-    "slug": "ao-the-chat-ute"
+    "slug": "ao-the-chat"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490305"
     },
-    "name": "Áo khoa công nghệ thông tin UTE",
+    "name": "Áo khoa công nghệ thông tin",
     "quantity": 300,
     "sold": 10,
     "description": "Chất liệu: coton thoáng khí, giúp mặc thoải mái",
@@ -149,13 +149,13 @@
     "updatedAt": {
       "$date": "2025-01-02T00:00:00Z"
     },
-    "slug": "ao-khoa-cong-nghe-thong-tin-ute"
+    "slug": "ao-khoa-cong-nghe-thong-tin"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490306"
     },
-    "name": "Áo đoàn viên UTE",
+    "name": "Áo đoàn viên",
     "quantity": 90,
     "sold": 7,
     "description": "Balo học sinh thời trang",
@@ -180,13 +180,13 @@
     "updatedAt": {
       "$date": "2025-01-03T00:00:00Z"
     },
-    "slug": "ao-doan-vien-ute"
+    "slug": "ao-doan-vien"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490307"
     },
-    "name": "Quần thể chất UTE",
+    "name": "Quần thể chất",
     "quantity": 90,
     "sold": 60,
     "description": "Quần thể chất với chất liệu thoáng khí, siêu bền bất chấp mọi tư thế",
@@ -211,13 +211,13 @@
     "updatedAt": {
       "$date": "2025-01-01T00:00:00Z"
     },
-    "slug": "quan-the-chat-ute"
+    "slug": "quan-the-chat"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490308"
     },
-    "name": "Quần jean nam UTE",
+    "name": "Quần jean nam",
     "quantity": 20,
     "sold": 3,
     "description": "Phù hợp xu thế, thiết kế hiện đại, đánh bại mọi đối thủ cạnh tranh crush của bạn",
@@ -242,16 +242,16 @@
     "updatedAt": {
       "$date": "2025-01-02T00:00:00Z"
     },
-    "slug": "quan-jean-nam-ute"
+    "slug": "quan-jean-nam"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490309"
     },
-    "name": "Quần jean nữ UTE",
+    "name": "Quần jean nữ",
     "quantity": 15,
     "sold": 7,
-    "description": "Thiết kế phù hợp với sinh viên nữ UTE, tôn lên vẻ đẹp của sinh viên, thu hút mọi ánh nhìn từ các bạn nam",
+    "description": "Thiết kế phù hợp với sinh viên nữ, tôn lên vẻ đẹp của sinh viên, thu hút mọi ánh nhìn từ các bạn nam",
     "price": 300000,
     "discount": 5,
     "category": {
@@ -273,16 +273,16 @@
     "updatedAt": {
       "$date": "2025-01-03T00:00:00Z"
     },
-    "slug": "quan-jean-nu-ute"
+    "slug": "quan-jean-nu"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490310"
     },
-    "name": "Mũ lưỡi trai UTE",
+    "name": "Mũ lưỡi trai",
     "quantity": 27,
     "sold": 9,
-    "description": "Thiết kế bắt mắt, chất liệu trường tồn với thời gian, chống lại cái nắng của mặt trời UTE",
+    "description": "Thiết kế bắt mắt, chất liệu trường tồn với thời gian, chống lại cái nắng của mặt trời",
     "price": 60000,
     "discount": 10,
     "category": {
@@ -304,13 +304,13 @@
     "updatedAt": {
       "$date": "2025-01-01T00:00:00Z"
     },
-    "slug": "mu-luoi-trai-ute"
+    "slug": "mu-luoi-trai"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490311"
     },
-    "name": "Mũ tai bèo UTE",
+    "name": "Mũ tai bèo",
     "quantity": 18,
     "sold": 5,
     "description": "Thiết kế vành nón rộng giúp tránh nắng tốt hơn",
@@ -335,13 +335,13 @@
     "updatedAt": {
       "$date": "2025-01-02T00:00:00Z"
     },
-    "slug": "mu-tai-beo-ute"
+    "slug": "mu-tai-beo"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490312"
     },
-    "name": "Mũ len UTE",
+    "name": "Mũ len",
     "quantity": 20,
     "sold": 12,
     "description": "Làm từ chất liệu len coton, thiết kế đẹp mắt",
@@ -366,13 +366,13 @@
     "updatedAt": {
       "$date": "2025-01-03T00:00:00Z"
     },
-    "slug": "mu-len-ute"
+    "slug": "mu-len"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490313"
     },
-    "name": "Giày Asia UTE",
+    "name": "Giày Asia",
     "quantity": 120,
     "sold": 57,
     "description": "Thiết kế form dáng hợp thời, thoáng khí, phù hợp với những giờ học thể chất",
@@ -397,13 +397,13 @@
     "updatedAt": {
       "$date": "2025-01-01T00:00:00Z"
     },
-    "slug": "giay-asia-ute"
+    "slug": "giay-asia"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490314"
     },
-    "name": "Giày sneaker UTE",
+    "name": "Giày sneaker",
     "quantity": 10,
     "sold": 3,
     "description": "Giày thời trang phù hợp với mọi đối tượng",
@@ -428,13 +428,13 @@
     "updatedAt": {
       "$date": "2025-01-02T00:00:00Z"
     },
-    "slug": "giay-sneaker-ute"
+    "slug": "giay-sneaker"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490315"
     },
-    "name": "Giày da UTE",
+    "name": "Giày da",
     "quantity": 15,
     "sold": 7,
     "description": "Chất liệu da thật 100%",
@@ -459,13 +459,13 @@
     "updatedAt": {
       "$date": "2025-01-03T00:00:00Z"
     },
-    "slug": "giay-da-ute"
+    "slug": "giay-da"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490316"
     },
-    "name": "Áo thun UTE Basic",
+    "name": "Áo thun Basic",
     "quantity": 50,
     "sold": 12,
     "description": "Áo thun cơ bản chất liệu cotton 100%, thoáng mát",
@@ -490,13 +490,13 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "o-thun-ute-basic"
+    "slug": "o-thun-basic"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490317"
     },
-    "name": "Túi đeo chéo UTE",
+    "name": "Túi đeo chéo",
     "quantity": 25,
     "sold": 8,
     "description": "Túi đeo chéo thời trang, phù hợp cho sinh viên",
@@ -521,13 +521,13 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "tui-deo-cheo-ute"
+    "slug": "tui-deo-cheo"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490318"
     },
-    "name": "Ví da UTE",
+    "name": "Ví da",
     "quantity": 30,
     "sold": 15,
     "description": "Ví da nam nữ đa năng, nhiều ngăn",
@@ -552,13 +552,13 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "vi-da-ute"
+    "slug": "vi-da"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490319"
     },
-    "name": "Đồng hồ đeo tay UTE",
+    "name": "Đồng hồ đeo tay",
     "quantity": 10,
     "sold": 2,
     "description": "Đồng hồ thông minh, chống nước IP68",
@@ -583,13 +583,13 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "ong-ho-deo-tay-ute"
+    "slug": "ong-ho-deo-tay"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490320"
     },
-    "name": "Kính mát UTE",
+    "name": "Kính mát",
     "quantity": 40,
     "sold": 18,
     "description": "Kính mát chống tia UV, thiết kế thời trang",
@@ -614,13 +614,13 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "kinh-mat-ute"
+    "slug": "kinh-mat"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490321"
     },
-    "name": "Bút ký UTE",
+    "name": "Bút ký",
     "quantity": 100,
     "sold": 35,
     "description": "Bút ký cao cấp, mực đen, thiết kế sang trọng",
@@ -645,13 +645,13 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "but-ky-ute"
+    "slug": "but-ky"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490322"
     },
-    "name": "Sổ tay UTE",
+    "name": "Sổ tay",
     "quantity": 60,
     "sold": 22,
     "description": "Sổ tay ghi chép, bìa da, 200 trang",
@@ -676,13 +676,13 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "so-tay-ute"
+    "slug": "so-tay"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490323"
     },
-    "name": "Áo khoác UTE",
+    "name": "Áo khoác",
     "quantity": 35,
     "sold": 10,
     "description": "Áo khoác gió, chống nước nhẹ, thiết kế unisex",
@@ -707,13 +707,13 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "ao-khoac-ute"
+    "slug": "ao-khoac"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490324"
     },
-    "name": "Quần short UTE",
+    "name": "Quần short",
     "quantity": 45,
     "sold": 20,
     "description": "Quần short thể thao, chất liệu thoáng khí",
@@ -738,13 +738,13 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "quan-short-ute"
+    "slug": "quan-short"
   },
   {
     "_id": {
       "$oid": "66af270df88554d0fd490325"
     },
-    "name": "Tất UTE",
+    "name": "Tất",
     "quantity": 200,
     "sold": 80,
     "description": "Tất cotton, đóng gói 5 đôi, nhiều màu sắc",
@@ -769,6 +769,6 @@
     "updatedAt": {
       "$date": "2025-01-04T00:00:00Z"
     },
-    "slug": "tat-ute"
+    "slug": "tat"
   }
 ]

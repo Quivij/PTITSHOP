@@ -45,7 +45,7 @@ class MailService {
             }
 
             await this.transporter.sendMail(mailOptions);
-
+            console.log(mailOptions);
             console.log(`Mail sent to ${to}`);
         } catch (error) {
             console.error("Error sending mail:", error);

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đơn hàng của tôi"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@color/colorTextPrimary"
+        android:layout_marginBottom="16dp"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="12dp">
+
+        <RadioGroup
+            android:id="@+id/rgStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:background="@drawable/bg_order_tab_selector"
+                android:textColor="@color/color_order_tab_text"
+                android:text="Tất cả"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rbPending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:background="@drawable/bg_order_tab_selector"
+                android:textColor="@color/color_order_tab_text"
+                android:text="Chờ xác nhận"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbPreparing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:background="@drawable/bg_order_tab_selector"
+                android:textColor="@color/color_order_tab_text"
+                android:text="Đang chuẩn bị"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbDelivering"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:background="@drawable/bg_order_tab_selector"
+                android:textColor="@color/color_order_tab_text"
+                android:text="Đang giao"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbDelivered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:background="@drawable/bg_order_tab_selector"
+                android:textColor="@color/color_order_tab_text"
+                android:text="Đã giao"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbCancelled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:background="@drawable/bg_order_tab_selector"
+                android:textColor="@color/color_order_tab_text"
+                android:text="Đã hủy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"/>
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOrders"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorTextSecondary" />
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <!-- Success Checkmark Image -->
+    <ImageView
+        android:id="@+id/imgResultStatus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_check_circle"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/tvResultTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đặt hàng thành công!"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@color/colorTextPrimary"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đơn hàng của bạn đã được tiếp nhận và xử lý."
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Details Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        android:layout_marginBottom="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#F8F9FA">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trạng thái"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="Đã xác nhận"
+                    android:textColor="@color/colorSuccess"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chi tiết đơn"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tvOrderDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="COD"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/btnViewOrder"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_btn_gold_gradient"
+        android:text="Xem chi tiết đơn hàng"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnBackHome"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:text="Tiếp tục mua sắm"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+</LinearLayout>
