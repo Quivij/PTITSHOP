@@ -1,1 +1,1 @@
-<resources><style name="Widget.UTEShop.Button" parent="Widget.MaterialComponents.Button"><item name="cornerRadius">10dp</item></style></resources>
+<resources><style name="Widget.PTITShop.Button" parent="Widget.MaterialComponents.Button"><item name="cornerRadius">10dp</item></style></resources>

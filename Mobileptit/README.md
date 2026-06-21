@@ -1,6 +1,6 @@
-# UTEShop Android Mobile App
+# PTITShop Android Mobile App
 
-Ứng dụng mobile Android cho UTEShop, được triển khai bằng **Java + XML Layout** theo tài liệu `ANDROID_JAVA_PROJECT_PLAN.md` và tích hợp API backend theo `API_CLIENT_DOCS.md`.
+Ứng dụng mobile Android cho PTITShop, được triển khai bằng **Java + XML Layout** theo tài liệu `ANDROID_JAVA_PROJECT_PLAN.md` và tích hợp API backend theo `API_CLIENT_DOCS.md`.
 
 Project hiện tập trung vào **client/user app**. Phần admin chỉ giữ placeholder để project build được, không phải phạm vi chính.
 
@@ -37,7 +37,7 @@ Cần cài:
 1. Android Studio hoặc Android SDK.
 2. JDK 17.
 3. Gradle wrapper đã có sẵn trong project.
-4. Backend UTEShop chạy local ở port `6969`.
+4. Backend PTITShop chạy local ở port `6969`.
 
 Project đang cấu hình Gradle dùng JDK 17 tại:
 
@@ -62,7 +62,7 @@ Hoặc cấu hình Gradle JDK trong Android Studio.
 Base URL đang đặt trong:
 
 ```txt
-app/src/main/java/com/uteshop/app/core/constants/ApiConstants.java
+app/src/main/java/com/ptitshop/app/core/constants/ApiConstants.java
 ```
 
 Mặc định:
@@ -145,7 +145,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 Source chính nằm trong:
 
 ```txt
-app/src/main/java/com/uteshop/app/
+app/src/main/java/com/ptitshop/app/
 ```
 
 ### 6.1 Core layer
@@ -393,7 +393,7 @@ Lưu ý backend:
 PUT /v1/api/cart/update
 ```
 
-API này cộng thêm quantity, không set absolute quantity.
+API này cộng thêm quantity, không set absolptit quantity.
 
 ### 7.5 Checkout / Payment
 

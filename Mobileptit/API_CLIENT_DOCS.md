@@ -1,12 +1,12 @@
-# UTEShop Client API Documentation
+# PTITShop Client API Documentation
 
-Tài liệu này tổng hợp API phía client từ route/controller/service/model hiện tại của backend. Các endpoint notification đã được bỏ qua theo yêu cầu.
+Tài liệu này tổng hợp API phía client từ roptit/controller/service/model hiện tại của backend. Các endpoint notification đã được bỏ qua theo yêu cầu.
 
 ## Thông tin chung
 
 - Base URL local theo code: `http://localhost:6969`
 - Base API path: `/v1/api/`
-- Protected route dùng header:
+- Protected roptit dùng header:
 
 ```http
 Authorization: Bearer <accessToken>
@@ -216,7 +216,7 @@ Response `200`:
 
 ```ts
 interface RootResponse {
-  message: "UTEShop API";
+  message: "PTITShop API";
 }
 ```
 
@@ -563,14 +563,14 @@ Response `200`:
 type SimilarProductsResponse = ProductListItem[];
 ```
 
-## 3.8 Tạo sản phẩm public route hiện tại
+## 3.8 Tạo sản phẩm public roptit hiện tại
 
 ```http
 POST /v1/api/create-products
 ```
 
-- Auth: public theo route hiện tại.
-- Công dụng: tạo 1 hoặc nhiều sản phẩm. Route này trông giống tác vụ admin nhưng hiện chưa bị chặn bởi auth/admin.
+- Auth: public theo roptit hiện tại.
+- Công dụng: tạo 1 hoặc nhiều sản phẩm. Roptit này trông giống tác vụ admin nhưng hiện chưa bị chặn bởi auth/admin.
 
 Request body:
 
@@ -586,13 +586,13 @@ type CreateProductsResponse =
   | { success: true; message: string; products: Product[] };
 ```
 
-## 3.9 Tạo category public route hiện tại
+## 3.9 Tạo category public roptit hiện tại
 
 ```http
 POST /v1/api/categories
 ```
 
-- Auth: public theo route hiện tại.
+- Auth: public theo roptit hiện tại.
 - Công dụng: tạo category, tự sinh slug.
 
 Request body:
@@ -1064,7 +1064,7 @@ PUT /v1/api/cart/update
 
 - Auth: required
 - Công dụng: cộng thêm `quantity` vào quantity hiện tại của item.
-- Lưu ý: đây không phải set absolute quantity, service đang tính `newQuantity = currentQuantity + quantity`.
+- Lưu ý: đây không phải set absolptit quantity, service đang tính `newQuantity = currentQuantity + quantity`.
 
 Request body:
 
@@ -1344,7 +1344,7 @@ GET /v1/api/orders/user/:userId
 
 - Auth: required
 - Công dụng: lấy toàn bộ order của userId truyền trên URL.
-- Lưu ý: route protected nhưng không kiểm tra `userId` có trùng user đang đăng nhập hay không.
+- Lưu ý: roptit protected nhưng không kiểm tra `userId` có trùng user đang đăng nhập hay không.
 
 Response `200`:
 
@@ -1360,7 +1360,7 @@ interface OrdersByUserIdResponse {
 
 # 11. Admin - Stats
 
-Tất cả admin API nằm sau `router.use(adminMiddleware)` nên cần `Authorization: Bearer <adminAccessToken>`. Theo code hiện tại, `adminMiddleware` kiểm tra `req.user.isAdmin` từ JWT payload đã decode.
+Tất cả admin API nằm sau `roptitr.use(adminMiddleware)` nên cần `Authorization: Bearer <adminAccessToken>`. Theo code hiện tại, `adminMiddleware` kiểm tra `req.user.isAdmin` từ JWT payload đã decode.
 
 ## 11.1 Thống kê doanh thu
 
@@ -1770,7 +1770,7 @@ type CategoryRawErrorResponse = {
 /** 1. System */
 interface GetRootRequest {}
 interface GetRootResponse {
-  message: "UTEShop API";
+  message: "PTITShop API";
 }
 type GetRootErrorResponse = ServerMessageErrorResponse;
 
@@ -2711,7 +2711,7 @@ interface ClientApiTypeMap {
 # 16. Ghi chú quan trọng cho FE
 
 1. Các endpoint notification đã cố ý không liệt kê trong tài liệu này.
-2. Một số route public hiện tại có vẻ nên là admin theo nghiệp vụ:
+2. Một số roptit public hiện tại có vẻ nên là admin theo nghiệp vụ:
    - `POST /v1/api/create-products`
    - `POST /v1/api/categories`
 3. `PUT /v1/api/cart/update` đang cộng thêm quantity, không set quantity tuyệt đối.

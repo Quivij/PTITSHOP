@@ -9,7 +9,7 @@ java {
 }
 
 android {
-    namespace = "com.uteshop.app"
+    namespace = "com.ptitshop.app"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -17,7 +17,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.uteshop.app"
+        applicationId = "com.ptitshop.app"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

@@ -1,6 +1,6 @@
-# Android Java Mobile Project Plan - UTEShop
+# Android Java Mobile Project Plan - PTITShop
 
-Tài liệu này là plan setup project mobile Android Java cho UTEShop. Mục tiêu chính: UI/UX cơ bản, dễ implement, cấu trúc file rõ theo module/feature/layer, tích hợp được API backend từ `API_CLIENT_DOCS.md`.
+Tài liệu này là plan setup project mobile Android Java cho PTITShop. Mục tiêu chính: UI/UX cơ bản, dễ implement, cấu trúc file rõ theo module/feature/layer, tích hợp được API backend từ `API_CLIENT_DOCS.md`.
 
 ---
 
@@ -94,13 +94,13 @@ Nếu muốn code nhanh, có thể bỏ ViewModel ở vài màn hình đầu, nh
 Package ví dụ:
 
 ```txt
-com.uteshop.app
+com.ptitshop.app
 ```
 
 Cấu trúc Java:
 
 ```txt
-app/src/main/java/com/uteshop/app/
+app/src/main/java/com/ptitshop/app/
 
 ├── core/
 │   ├── config/
@@ -246,7 +246,7 @@ app/src/main/java/com/uteshop/app/
 │       ├── AdminUserActivity.java
 │       └── AdminViewModel.java
 │
-└── UTEShopApplication.java
+└── PTITShopApplication.java
 ```
 
 ---
@@ -384,7 +384,7 @@ Nhiệm vụ:
 
 ```java
 public class SessionManager {
-    private static final String PREF_NAME = "uteshop_session";
+    private static final String PREF_NAME = "ptitshop_session";
     private static final String KEY_ACCESS_TOKEN = "access_token";
     private static final String KEY_REFRESH_TOKEN = "refresh_token";
     private static final String KEY_IS_ADMIN = "is_admin";
@@ -1385,7 +1385,7 @@ imgProduct
 4. `PUT /v1/api/cart/update` cộng thêm quantity, không set quantity tuyệt đối.
 5. `PUT /v1/api/orders/:orderId/status` nhận trạng thái hiện tại để backend suy ra trạng thái mới.
 6. VNPay callback hiện redirect về web FE `http://localhost:3000/payment-callback`; mobile cần xử lý riêng nếu muốn production-ready.
-7. Một số route public của backend có vẻ nên là admin theo nghiệp vụ, nhưng mobile nên ưu tiên dùng admin routes chính thức:
+7. Một số roptit public của backend có vẻ nên là admin theo nghiệp vụ, nhưng mobile nên ưu tiên dùng admin roptits chính thức:
    - Dùng `POST /v1/api/admin/products` thay vì `POST /v1/api/create-products`.
    - Dùng `POST /v1/api/admin/categories` thay vì `POST /v1/api/categories` khi thao tác admin.
 
