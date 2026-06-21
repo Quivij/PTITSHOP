@@ -85,7 +85,7 @@ const router = express.Router();
 
 const initApiRoutes = (app) => {
   router.get("/", (req, res) => {
-    return res.status(200).json({ message: "UTEShop API" });
+    return res.status(200).json({ message: "PtitShop API" });
   });
 
 

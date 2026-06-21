@@ -55,7 +55,7 @@ class MailService {
 
     async sendOrderSuccessEmail(user, order, shopUrl = "http://localhost:3000") {
         try {
-            const subject = `Cảm ơn bạn đã đặt hàng tại UTEShop - Đơn hàng #${order._id}`;
+            const subject = `Cảm ơn bạn đã đặt hàng tại PtitShop - Đơn hàng #${order._id}`;
             const data = {
                 user,
                 order,
@@ -72,7 +72,7 @@ class MailService {
 
     async sendReviewSuccessEmail(user, review, product, reward, shopUrl = "http://localhost:3000") {
         try {
-            const subject = `Cảm ơn bạn đã đánh giá sản phẩm tại UTEShop`;
+            const subject = `Cảm ơn bạn đã đánh giá sản phẩm tại PtitShop`;
             const data = {
                 user,
                 review,
